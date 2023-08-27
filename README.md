@@ -2,4 +2,4 @@
 
 # install flask and run:
 
-flask --app hello run
+flask --app main run
