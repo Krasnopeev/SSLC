@@ -1,4 +1,4 @@
-# SSLC
+# Science Storm and Lightning Chasers (SSLC).
 
 # install flask and run:
 
