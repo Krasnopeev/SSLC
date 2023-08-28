@@ -20,12 +20,20 @@ async def main():
         # Get shops data from OpenStreetMap
         data = get_data(request.form["date"], request.form["count"])
         
+        start = request.form["start"]
+        start = request.form["end"]
+
+        step = request.form["end"]
+        
+
         markers = ''
         
         for i in data:
             # Create the marker
-            markers += "var marker = L.marker([{latitude}, {longitude}]).addTo(map);".format(latitude=i['lat'], longitude=i['lon'])
+            #markers += "var marker = L.marker([{latitude}, {longitude}]).addTo(map);".format(latitude=i['lat'], longitude=i['lon'])
+            markers += """var marker = L.circle([{latitude}, {longitude}]).setStyle({{color: 'red', fillColor: '#ff1', fillOpacity: 0.5, radius: 10000}}).addTo(map);""".format(latitude=i['lat'], longitude=i['lon'])
         
+        #print(markers)
         # Render the page with the map
         return render_template('results.html', markers=markers, date=request.form["date"])
     
