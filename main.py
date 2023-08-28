@@ -31,7 +31,7 @@ async def main():
         for i in data:
             # Create the marker
             #markers += "var marker = L.marker([{latitude}, {longitude}]).addTo(map);".format(latitude=i['lat'], longitude=i['lon'])
-            markers += """var marker = L.circle([{latitude}, {longitude}]).setStyle({{color: 'red', fillColor: '#ff1', fillOpacity: 0.5, radius: 10000}}).addTo(map);""".format(latitude=i['lat'], longitude=i['lon'])
+            markers += "var marker = L.circle([{latitude}, {longitude}], {{color: 'red', fillColor: '#ff1', fillOpacity: 0.5, colorOpacity: 0.5, radius: 5000}}).addTo(map);".format(latitude=i['lat'], longitude=i['lon'])
         
         #print(markers)
         # Render the page with the map
