@@ -59,28 +59,28 @@ body {
 
 
 /* blockquote styles */
-/* 
+
 @import url(https://fonts.googleapis.com/css?family=Lora);
 
 blockquote {
   margin: auto;
   padding: 1.5em;
-  background: linear-gradient(white, white) padding-box, url("images/quote_bg2.png") border-box 0 / cover;
-  border: 2em solid transparent;
+  background: linear-gradient(white, white) padding-box, url("images/test.png") border-box 0 / cover;
+  border: 1em solid transparent;
   box-shadow: 5px 3px 30px black;
   font-size: 1.2em;
   font-family: 'Lora', serif;
   font-style: italic;
   line-height: 1;
   color: #2c2a2a;
-  width: 40%;
+  width: 55%;
+  border-radius: .3em;
 }
 
 footer {
   padding-top: 1.3em;
 }
 
- */
 
 video {
   object-fit: cover;
