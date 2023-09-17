@@ -92,12 +92,12 @@
       // convert CSV or text to geoJSON
       // https://www.convertcsv.com/csv-to-geojson.htm 
       // load GeoJSON from an external file
-      $.getJSON("https://raw.githubusercontent.com/Krasnopeev/SSLC/main/sample__sizse_100.geojson", function (data) {
+      $.getJSON("./misc/sample__sizse_500.geojson", function (data) {
         // add GeoJSON layer to the map once the file is loaded
         L.geoJson(data, { pointToLayer: function (feature, latlng) { return L.marker(latlng, { icon: smallIcon }) } }).addTo(map);
       });
 
-      var geoJsonUrl = "https://raw.githubusercontent.com/Krasnopeev/SSLC/main/sample__sizse_500.geojson"
+      var geoJsonUrl = "./misc/2023-07-25.geojson"
 
       var geojsonLayer = $.ajax({
         url: geoJsonUrl,
