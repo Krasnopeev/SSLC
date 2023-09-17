@@ -13,9 +13,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-  <script src="js/raw_leaflet-heat.js"></script>
-
-  <!-- <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script> -->
+  <script src="js/leaflet-heat.js"></script>
 
   <link rel="shortcut icon" href="images/icon.png" type="image/png">
 
@@ -38,29 +36,15 @@
   </div>
 
   <div class="content">
-    <!-- <blockquote>
-      "Со стороны эти сборища теоретиков выглядели беспечной, веселой болтовней отдыхающих.
-      Впрочем, и весь их рабочий день любому постороннему показался бы более чем странным.
-      Молодой, здоровый парень появляется в институте в десять, а то и в одиннадцать утра,
-      слоняется по лаборатории, зайдет в библиотеку, перелистает журналы, побалагурит в коридоре с девушками.
-      Изредка его можно увидеть за столом – что-то он пишет либо сидит, бессмысленно закатив глаза в потолок.
-      Остальное время – болтовня с себе подобными шалопаями.
-      И это считалось работой!"
-      <footer>&mdash;
-        <cite>
-          ДАНИИЛ ГРАНИН, "ИДУ НА ГРОЗУ"
-        </cite>
-      </footer>
-    </blockquote>
-   -->
-    <p>
-      Now loaded data: 2023-07-25 (03:54 - 04:54 GMT)
-      <br>
-      points count: 500
-      <br>
-      heatmap count: 3421
-    </p>
     
+   <p>
+    Now loaded data: 2023-07-25 (time range?)
+    <br>
+    points count: 500
+    <br>
+    heatmap count: 3421
+  </p>
+
     <div id="map" class="leaflet-container"></div>
     <script>
       var map = L.map('map').setView([54, 104.1], 6);
@@ -100,12 +84,12 @@
       // convert CSV or text to geoJSON
       // https://www.convertcsv.com/csv-to-geojson.htm 
       // load GeoJSON from an external file
-      $.getJSON("./misc/sample__sizse_500.geojson", function (data) {
+      $.getJSON("https://raw.githubusercontent.com/Krasnopeev/SSLC/main/sample__sizse_100.geojson", function (data) {
         // add GeoJSON layer to the map once the file is loaded
         L.geoJson(data, { pointToLayer: function (feature, latlng) { return L.marker(latlng, { icon: smallIcon }) } }).addTo(map);
       });
 
-      var geoJsonUrl = "./misc/2023-07-25.geojson"
+      var geoJsonUrl = "https://raw.githubusercontent.com/Krasnopeev/SSLC/main/sample__sizse_500.geojson"
 
       var geojsonLayer = $.ajax({
         url: geoJsonUrl,
@@ -131,8 +115,23 @@
       });
 
     </script>
+   
 
-
+  </div>
+  <blockquote>
+    "Со стороны эти сборища теоретиков выглядели беспечной, веселой болтовней отдыхающих.
+    Впрочем, и весь их рабочий день любому постороннему показался бы более чем странным.
+    Молодой, здоровый парень появляется в институте в десять, а то и в одиннадцать утра,
+    слоняется по лаборатории, зайдет в библиотеку, перелистает журналы, побалагурит в коридоре с девушками.
+    Изредка его можно увидеть за столом – что-то он пишет либо сидит, бессмысленно закатив глаза в потолок.
+    Остальное время – болтовня с себе подобными шалопаями.
+    И это считалось работой!"
+    <footer>&mdash;
+      <cite>
+        ДАНИИЛ ГРАНИН, "ИДУ НА ГРОЗУ"
+      </cite>
+    </footer>
+  </blockquote>
 </body>
 
 </html>
